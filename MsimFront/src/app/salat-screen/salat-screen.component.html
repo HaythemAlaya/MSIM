@@ -1,8 +1,13 @@
-<div class="salat-list">
+<div id="main">
+  <app-general-info></app-general-info>
+<div class="salat-list" *ngIf="listeSalatEnable">
+  <app-salat [salatModel]="sobah"></app-salat>
   <app-salat [salatModel]="dohir"></app-salat>
-  <app-salat [salatModel]="dohir"></app-salat>
-  <app-salat [salatModel]="dohir"></app-salat>
-  <app-salat [salatModel]="dohir"></app-salat>
-  <app-salat [salatModel]="dohir"></app-salat>
-  <app-salat [salatModel]="dohir"></app-salat>
+  <app-salat [salatModel]="assir"></app-salat>
+  <app-salat [salatModel]="magurib"></app-salat>
+  <app-salat [salatModel]="iicha"></app-salat>
+</div>
+<div class="info-box" id="info-salat" *ngIf=true>
+ 
+</div>
 </div>

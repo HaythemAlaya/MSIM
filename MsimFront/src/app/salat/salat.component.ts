@@ -8,9 +8,9 @@ import {SalatModel} from '../model/SalatModel';
 })
 export class SalatComponent implements OnInit {
 @Input("salatModel") public salatModel : any;
-public  salatTime ;
-public  salatPrayTime;
-
+public salatTime ;
+public salatPrayTime;
+public isActive = false ;
 
   constructor() { 
 

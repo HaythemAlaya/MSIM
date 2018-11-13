@@ -1,5 +1,16 @@
 .main-salat{
     float: left;
-    padding: 10px;
-    margin: 10px;
+}
+.ArName{
+font-size: 31pt;
+font-family: 'Times New Roman', Times, serif;
+font-weight: bold;
+}
+.FrName{
+    font-size: 31pt;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+#salat-names{
+    margin-top: 10px;
 }

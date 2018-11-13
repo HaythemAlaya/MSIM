@@ -1,6 +1,7 @@
 <div class="main-salat">
-<div>{{salatModel.salatName}}</div>
-<div>{{salatTime | date:'h:mm'}}</div>
-<div>{{salatPrayTime | date:'h:mm'}}</div>
-<div>{{salatModel.waitingTime}}</div>
+    <app-analog-clock [waitingTime]="salatModel.waitingTime" [minutes]="salatModel.minutes" [hours]="salatModel.hour"></app-analog-clock>
+    <div id='salat-names'>
+        <div class="ArName">{{salatModel.getArabName()}}</div>
+        <div class="FrName">{{salatModel.getFrName()}}</div>
+    </div>
 </div>
