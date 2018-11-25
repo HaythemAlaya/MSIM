@@ -1,7 +1,26 @@
+.columnLeft {
+    float: left;
+    width: 33.33%;
+    padding: 1px;
+    text-align: center;
+}
 .column {
     float: left;
     width: 33.33%;
     padding: 1px;
+}
+
+.columnRight {
+    float: left;
+    width: 30.33%;
+   
+    padding: 10px;
+}
+.textSryle {
+    display: inline;
+    font-size: 40pt;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
 }
 
 .row:after {

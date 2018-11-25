@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SalatModel} from '../model/SalatModel';
+import { RestService } from '../rest.service';
 @Component({
   selector: 'app-salat-screen',
   templateUrl: './salat-screen.component.html',
@@ -12,15 +13,17 @@ export class SalatScreenComponent implements OnInit {
   public magurib : SalatModel;
   public iicha : SalatModel;
   public listeSalatEnable = true ;
-  constructor(){
-    
+  constructor(public rest:RestService){
   }
   ngOnInit() {
-    this.sobah =  new SalatModel(6,18,"sbh",15) ;
-    this.dohir =  new SalatModel(23,36,"dhr",15) ;
-    this.assir =  new SalatModel(14,44,"asr",15) ;
-    this.magurib =  new SalatModel(17,11,"mgb",15) ;
-    this.iicha =  new SalatModel(18,21,"ich",15) ;
+    this.rest.getSalatInformation().subscribe((data: {}) => {
+      console.log(data);
+    this.sobah    =  new SalatModel(data['Fajr'].split(":", 2)[0],data['Fajr'].split(":", 2)[1],"sbh",15) ;
+    this.dohir    =  new SalatModel(data['Dhuhr'].split(":", 2)[0],data['Dhuhr'].split(":", 2)[1],"dhr",15) ;
+    this.assir    =  new SalatModel(data['Asr'].split(":", 2)[0],data['Fajr'].split(":", 2)[1],"asr",15) ;
+    this.magurib  =  new SalatModel(data['Maghrib'].split(":", 2)[0],data['Maghrib'].split(":", 2)[1],"mgb",15) ;
+    this.iicha    =  new SalatModel(data['Isha'].split(":", 2)[0],data['Isha'].split(":", 2)[1],"ich",15) ;
+    });
   }
 
 
